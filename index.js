@@ -1,13 +1,13 @@
 const express = require("express");
 const axios = require("axios");
 const bodyParser = require("body-parser");
-
+const cors = require("cors");
 const app = express();
 const port = 3000;
 
 // Middleware to parse JSON bodies
 app.use(bodyParser.json());
-
+app.use(cors());
 // Route handler for GET requests
 app.get("/api/get", async (req, res) => {
   await handleRequest(req, res, "get");
